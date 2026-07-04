@@ -1,3 +1,7 @@
+import sys
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 # Проект FitLife - MVP версия 1.0
 
 
@@ -22,14 +26,12 @@ bmi = round(bmi, 1)  # округление
 
 # Подсчет воды: вес * 30 мл
 # TODO: Рассчитай water_needed
-water_needed = user_weight * 30
-water_needed_ml = water_needed / 1000  # Перевод в миллилитры
-water_needed_ml = round(water_needed_ml, 1)  # Округление
+water_needed = round(user_weight * 30 / 1000, 3)
 
 # 4. Вывод красивого результата
 # TODO: Используй f-строку, чтобы вывести приветствие,
-print(f"Привет, {user_name}!")
-print(f"Ваш возраст: {user_age}")
-print(f"Ваш ИМТ: {bmi:.1f}")
-print(f"Ваша норма воды: {water_needed_ml} л")
-print("Расчет окончен. Будьте здоровы!")
+print(f"Hi, {user_name}!")
+print(f"Your age: {user_age}")
+print(f"Your BMI: {bmi:.1f}")
+print(f"Your water intake: {water_needed} l")
+print("Calculation complete. Stay healthy!")
