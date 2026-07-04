@@ -18,17 +18,18 @@ user_height = float(input('Введите Ваш рост (м): '))
 # Формула ИМТ: вес разделить на (рост в квадрате)
 # TODO: Рассчитай bmi (Индекс массы тела)
 bmi = user_weight / (user_height ** 2)
+bmi = round(bmi, 1)  # округление
 
 # Подсчет воды: вес * 30 мл
 # TODO: Рассчитай water_needed
 water_needed = user_weight * 30
-water_needed_ml = water_needed * 1000  # Перевод в миллилитры
-water_needed = round(water_needed_ml, 1)  # круг
+water_needed_ml = water_needed / 1000  # Перевод в миллилитры
+water_needed_ml = round(water_needed_ml, 1)  # Округление
 
 # 4. Вывод красивого результата
 # TODO: Используй f-строку, чтобы вывести приветствие,
 print(f"Привет, {user_name}!")
 print(f"Ваш возраст: {user_age}")
 print(f"Ваш ИМТ: {bmi:.1f}")
-print(f"Ваша норма воды: {water_needed} мл")
+print(f"Ваша норма воды: {water_needed_ml} л")
 print("Расчет окончен. Будьте здоровы!")
