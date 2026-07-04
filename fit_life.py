@@ -22,6 +22,8 @@ bmi = user_weight / (user_height ** 2)
 # Подсчет воды: вес * 30 мл
 # TODO: Рассчитай water_needed
 water_needed = user_weight * 30
+water_needed_ml = water_needed * 1000  # Перевод в миллилитры
+water_needed = round(water_needed_ml, 1)  # Округление до одного знака после запятой
 
 # 4. Вывод красивого результата
 # TODO: Используй f-строку, чтобы вывести приветствие,
